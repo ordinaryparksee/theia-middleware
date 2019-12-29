@@ -1,0 +1,30 @@
+{
+  "name": "theia-middleware",
+  "keywords": [
+    "theia-extension"
+  ],
+  "version": "0.0.6",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "latest",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "backend": "lib/backend/theia-middleware-backend-module"
+    }
+  ]
+}
