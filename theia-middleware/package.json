@@ -9,7 +9,7 @@
     "src"
   ],
   "dependencies": {
-    "@theia/core": "latest",
+    "@theia/core": "next",
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
