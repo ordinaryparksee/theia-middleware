@@ -3,71 +3,46 @@ The example of how to build the Theia-based applications with the theia-middlewa
 
 ## Getting started
 
-Install [nvm](https://github.com/creationix/nvm#install-script).
+Add theia-middleware package in your `package.json`
 
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.5/install.sh | bash
+``` javascript
+{
+  "private": true,
+  "dependencies": {
+    "typescript": "latest",
+    "@theia/typescript": "latest",
+    "@theia/navigator": "latest",
+    "@theia/terminal": "latest",
+    "@theia/outline-view": "latest",
+    "@theia/preferences": "latest",
+    "@theia/messages": "latest",
+    "@theia/git": "latest",
+    "@theia/file-search": "latest",
+    "@theia/markers": "latest",
+    "@theia/preview": "latest",
+    "@theia/callhierarchy": "latest",
+    "@theia/merge-conflicts": "latest",
+    "@theia/search-in-workspace": "latest",
+    "@theia/json": "latest",
+    "@theia/textmate-grammars": "latest",
+    "@theia/mini-browser": "latest",
+    "theia-middleware": "^0.0.2" // << Add this line
+  },
+  "devDependencies": {
+    "@theia/cli": "latest"
+  }
+}
+```
 
-Install npm and node.
+And now apply added package and rebuild the theia
 
-    nvm install 8
-    nvm use 8
+    yarn && yarn theia build
 
-Install yarn.
+Create `.env` file in your theia root directory (Same location with package.json)
 
-    npm install -g yarn
+Finally, edit the `.env` file for settings. if without `.env` file, default user and password is `admin` and `admin`
 
-## Running the browser example
-
-    yarn rebuild:browser
-    cd browser-app
-    yarn start
-
-Open http://localhost:3000 in the browser.
-
-## Running the Electron example
-
-    yarn rebuild:electron
-    cd electron-app
-    yarn start
-
-## Developing with the browser example
-
-Start watching of theia-middleware.
-
-    cd theia-middleware
-    yarn watch
-
-Start watching of the browser example.
-
-    yarn rebuild:browser
-    cd browser-app
-    yarn watch
-
-Launch `Start Browser Backend` configuration from VS code.
-
-Open http://localhost:3000 in the browser.
-
-## Developing with the Electron example
-
-Start watching of theia-middleware.
-
-    cd theia-middleware
-    yarn watch
-
-Start watching of the electron example.
-
-    yarn rebuild:electron
-    cd electron-app
-    yarn watch
-
-Launch `Start Electron Backend` configuration from VS code.
-
-## Publishing theia-middleware
-
-Create a npm user and login to the npm registry, [more on npm publishing](https://docs.npmjs.com/getting-started/publishing-npm-packages).
-
-    npm login
-
-Publish packages with lerna to update versions properly across local packages, [more on publishing with lerna](https://github.com/lerna/lerna#publish).
-
-    npx lerna publish
+    echo 'AUTH_USER=yourname' >> .env
+    echo 'AUTH_PASS=yourpassword' >> .env
+    
+Restart theia
