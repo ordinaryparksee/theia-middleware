@@ -4,5 +4,4 @@ lib
 *.log
 *-app/*
 !*-app/package.json
-yarn.lock
 .vscode
