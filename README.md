@@ -46,3 +46,10 @@ Finally, edit the `.env` file for settings. if without `.env` file, default user
     echo 'AUTH_PASS=yourpassword' >> .env
     
 Restart theia
+
+## Supported `.env` variables
+
+ - AUTH_USER
+ - AUTH_PASS
+ - AUTH_REALM
+ - AUTH_FALLBACK_MSG
