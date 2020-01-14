@@ -9,27 +9,27 @@ Add theia-middleware package in your `package.json`
 {
   "private": true,
   "dependencies": {
-    "typescript": "latest",
-    "@theia/typescript": "latest",
-    "@theia/navigator": "latest",
-    "@theia/terminal": "latest",
-    "@theia/outline-view": "latest",
-    "@theia/preferences": "latest",
-    "@theia/messages": "latest",
-    "@theia/git": "latest",
-    "@theia/file-search": "latest",
-    "@theia/markers": "latest",
-    "@theia/preview": "latest",
-    "@theia/callhierarchy": "latest",
-    "@theia/merge-conflicts": "latest",
-    "@theia/search-in-workspace": "latest",
-    "@theia/json": "latest",
-    "@theia/textmate-grammars": "latest",
-    "@theia/mini-browser": "latest",
+    "typescript": "next",
+    "@theia/typescript": "next",
+    "@theia/navigator": "next",
+    "@theia/terminal": "next",
+    "@theia/outline-view": "next",
+    "@theia/preferences": "next",
+    "@theia/messages": "next",
+    "@theia/git": "next",
+    "@theia/file-search": "next",
+    "@theia/markers": "next",
+    "@theia/preview": "next",
+    "@theia/callhierarchy": "next",
+    "@theia/merge-conflicts": "next",
+    "@theia/search-in-workspace": "next",
+    "@theia/json": "next",
+    "@theia/textmate-grammars": "next",
+    "@theia/mini-browser": "next",
     "theia-middleware": "^0.0.2" // << Add this line
   },
   "devDependencies": {
-    "@theia/cli": "latest"
+    "@theia/cli": "next"
   }
 }
 ```
