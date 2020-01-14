@@ -26,7 +26,7 @@ Add theia-middleware package in your `package.json`
     "@theia/json": "next",
     "@theia/textmate-grammars": "next",
     "@theia/mini-browser": "next",
-    "theia-middleware": "^0.0.8" // << Add this line
+    "theia-middleware": "^0.0.9" // << Add this line
   },
   "devDependencies": {
     "@theia/cli": "next"
