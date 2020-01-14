@@ -26,7 +26,7 @@ Add theia-middleware package in your `package.json`
     "@theia/json": "next",
     "@theia/textmate-grammars": "next",
     "@theia/mini-browser": "next",
-    "theia-middleware": "^0.0.9" // << Add this line
+    "theia-middleware": "^0.1.0" // << Add this line
   },
   "devDependencies": {
     "@theia/cli": "next"
@@ -46,3 +46,10 @@ Finally, edit the `.env` file for settings. if without `.env` file, default user
     echo 'AUTH_PASS=yourpassword' >> .env
     
 Restart theia
+
+## Supported `.env` variables
+
+ - AUTH_USER
+ - AUTH_PASS
+ - AUTH_REALM
+ - AUTH_FALLBACK_MSG
