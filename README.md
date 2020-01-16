@@ -1,5 +1,5 @@
 # theia-middleware
-The example of how to build the Theia-based applications with the theia-middleware.
+Authentication for theia browser app
 
 ## Getting started
 
