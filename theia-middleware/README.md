@@ -49,7 +49,13 @@ Restart theia
 
 ## Supported `.env` variables
 
- - AUTH_USER
- - AUTH_PASS
- - AUTH_REALM
- - AUTH_FALLBACK_MSG
+ - AUTH_USER (default: admin)
+ - AUTH_PASS (default: admin)
+ - AUTH_REALM (default: authenticate)
+ - AUTH_FALLBACK_MSG (default: Authentication required.)
+ - AUTH_LOGOUT_USER (default: LOGOUT)
+
+ `AUTH_LOGOUT_USER` is using at logout.
+it just redirect to `http[s]://[AUTH_LOGOUT_USER]@[domain]` for logout.
+BTW if you use user name  same with `AUTH_LOGOUT_USER` logout doesn't work
+So in this case you have to change `AUTH_LOGOUT_USER` from `.env` file
