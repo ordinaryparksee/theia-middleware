@@ -18,7 +18,7 @@
     "@theia/typescript": "next",
     "@theia/messages": "next",
     "@theia/electron": "next",
-    "theia-middleware": "^0.0.6"
+    "theia-middleware": "^0.1.2"
   },
   "devDependencies": {
     "@theia/cli": "next"

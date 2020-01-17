@@ -3,7 +3,7 @@
   "keywords": [
     "theia-extension"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2",
   "files": [
     "lib",
     "src"
@@ -24,7 +24,8 @@
   },
   "theiaExtensions": [
     {
-      "backend": "lib/backend/theia-middleware-backend-module"
+      "backend": "lib/backend/theia-middleware-backend-module",
+      "frontend": "lib/browser/theia-middleware-frontend-module"
     }
   ]
 }
