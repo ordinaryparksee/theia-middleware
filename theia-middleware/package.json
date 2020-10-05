@@ -3,14 +3,19 @@
   "keywords": [
     "theia-extension"
   ],
-  "version": "0.1.2",
+  "version": "0.1.3",
   "files": [
     "lib",
     "src"
   ],
   "dependencies": {
     "@theia/core": "next",
-    "dotenv": "^8.2.0"
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "crypto-js": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "qrcode": "^1.4.4",
+    "speakeasy": "2.0.0"
   },
   "devDependencies": {
     "rimraf": "latest",
@@ -24,7 +29,7 @@
   },
   "theiaExtensions": [
     {
-      "backend": "lib/backend/theia-middleware-backend-module",
+      "backend": "lib/node/theia-middleware-backend-module",
       "frontend": "lib/browser/theia-middleware-frontend-module"
     }
   ]

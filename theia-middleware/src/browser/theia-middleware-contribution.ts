@@ -13,12 +13,7 @@ export class TheiaMiddlewareCommandContribution implements CommandContribution {
     registerCommands(registry: CommandRegistry): void {
         registry.registerCommand(TheiaMiddlewareCommand, {
             execute: () => {
-                let logoutUser = process.env.AUTH_LOGOUT_USER || 'LOGOUT'
-                let logoutUrl = `${location.protocol}//${logoutUser}@${location.hostname}`
-                if (location.port) {
-                    logoutUrl += ":" + location.port
-                }
-                location.href = logoutUrl
+                location.href = '/logout'
             }
         })
     }
