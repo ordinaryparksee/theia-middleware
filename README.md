@@ -23,7 +23,7 @@ Add theia-middleware package in your `package.json`
     "@theia/textmate-grammars": "next",
     "@theia/typescript": "next",
     "@theia/messages": "next",
-    "theia-middleware": "^0.1.3" // << Add this line
+    "theia-middleware": "^0.1.4" // << Add this line
   },
   "devDependencies": {
     "@theia/cli": "next"

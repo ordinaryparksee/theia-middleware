@@ -110,33 +110,38 @@ export class TheiaMiddlewareContribution implements BackendApplicationContributi
         })
 
         app.get('/otp/setup', (request, response) => {
-            const otpName = process.env.AUTH_OTP_NAME || 'Theia'
-            QRCode.toDataURL(`otpauth://totp/${otpName}?secret=${request.query.token}`, function(err: Error, dataUrl: String) {
-                response.send(`
-                <!DOCTYPE html>
-                <html>
-                    <head>
-                        <title>Theia OTP Setup</title>
-                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
-                    </head>
-                    <body>
-                        <div class="uk-container uk-text-center">
-                            <h1>OTP Setup</h1>
-                            <div>Your OTP secret key is <code>${request.query.token}</code></div>
-                            <div>!!IMPORTANT!!</div>
-                            <div>You have to save secret key to <code>.env</code> file like this below</div>
-                            <code>AUTH_OTP_SECRET="${request.query.token}"</code>
-                            <div>
-                                <img src="${dataUrl}">
+            if (!process.env.AUTH_OTP_SECRET) {
+                const otpName = process.env.AUTH_OTP_NAME || 'Theia'
+                QRCode.toDataURL(`otpauth://totp/${otpName}?secret=${request.query.token}`, function(err: Error, dataUrl: String) {
+                    response.send(`
+                    <!DOCTYPE html>
+                    <html>
+                        <head>
+                            <title>Theia OTP Setup</title>
+                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.8/dist/css/uikit.min.css" />
+                        </head>
+                        <body>
+                            <div class="uk-container uk-text-center">
+                                <h1>OTP Setup</h1>
+                                <div>Your OTP secret key is <code>${request.query.token}</code></div>
+                                <div>!!IMPORTANT!!</div>
+                                <div>You have to save secret key to <code>.env</code> file like this below</div>
+                                <code>AUTH_OTP_SECRET="${request.query.token}"</code>
+                                <div>
+                                    <img src="${dataUrl}">
+                                </div>
+                                <div>
+                                    Click <a href="/">this</a> for authentication after you save secret key
+                                </div>
                             </div>
-                            <div>
-                                Click <a href="/">this</a> for authentication after you save secret key
-                            </div>
-                        </div>
-                    </body>
-                </html>
-                `)
-            })
+                        </body>
+                    </html>
+                    `)
+                })
+            }
+            else {
+                response.redirect('/')
+            }
         })
 
         app.get('/otp/auth', (request, response) => {
